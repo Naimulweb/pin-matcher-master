@@ -1,3 +1,4 @@
+  
 *{
     box-sizing: border-box;
 }
@@ -30,17 +31,22 @@ body {
 .generate-btn:focus{
     outline: none;
     box-shadow: none;
+  
 }
 
 input[type='text']{
     background-color: #3D4153;
     padding: 10px 0px;
-    color: #ffffff;
     width: 80%;
     margin: 0 auto;
     border: 2px solid #858299;
     height: 50px;
     padding: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 12px;
 }
 input[type='text']:focus {
     background-color: #3D4153;
@@ -95,7 +101,6 @@ color: #E0B612;
     margin-top: 20px;
     border-radius: 15px;
     padding: 5px 20px;
-    display: none;
 }
 .notify-section{
     width: 35%;
@@ -105,7 +110,8 @@ color: #E0B612;
     color: #FF3C5F;
     margin-top: 10px;
 }
-.button input{
-    border:none;
-    background-color: none;
+/* BOOTSTRAP PROPERTY CHANGE */
+.form-control:disabled, .form-control[readonly] {
+    background-color:transparent;
+  
 }

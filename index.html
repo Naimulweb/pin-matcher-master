@@ -12,73 +12,51 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control" type="text">
-                    <button class="generate-btn">Generate Pin</button>
+                    <input class="form-control" id="pinnumberGenerate" type="text" placeholder="0" readonly>
+                    <button class="generate-btn" onclick="pinGenerator()">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input class="form-control" id="pinNumberInput" type="text" placeholder="0">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                              <div class="button" onclick="inputNumber(7)">7</div>
+                              <div class="button" onclick="inputNumber(8)">8</div>
+                              <div class="button" onclick="inputNumber(9)">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                              <div class="button" onclick="inputNumber(4)">4</div>
+                              <div class="button" onclick="inputNumber(5)">5</div>
+                              <div class="button" onclick="inputNumber(6)">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                              <div class="button" onclick="inputNumber(1)">1</div>
+                              <div class="button" onclick="inputNumber(2)">2</div>
+                              <div class="button" onclick="inputNumber(3)">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                                <div class="button" onclick="backspaceNumber()"><</div>
+                                <div class="button" onclick="inputNumber(0)">0</div>
+                                <div class="button" onclick="clearAllNumber()">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <button type="submit" id="submitBtn" class="submit-btn" onclick="matchOrNot()" >Submit</button>
+                                <p class="action-left"><span id="actionCount"> 3 </span> try left</p>
                             </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="notify-section">
+        <div class ="notify-section" id="notifySection" >
+          <div id="notifyUnmatch">
             <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <button class="btn btn-primary mt-3 mr-auto ml-auto d-block" id="tryAgain" onclick="tryAgain()">Try Again Please!</button>
+          </div>
+            <p class="notify" id="notifyMatch">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
-    <script>
-
-        document.getElementById('generate_button').addEventListener('click', function(){
-                 let generatorResult = Math.floor(1000 + Math.random() * 9000);
-        
-                document.getElementById("generate_show").value = generatorResult;
-        
-                
-            })
-        
-        const inputSubmit = document.getElementById('submit_button').addEventListener('click', function(){
-            let generateInputValue = document.getElementById('generate_show').value;
-            let calculatorValue = document.getElementById('input_value').value;
-            if(generateInputValue === calculatorValue){
-                let showGreen = document.getElementById('show_result');
-                showGreen.style.display= 'block';
-            }else{
-                let showRed = document.getElementById('not_ShowResult').value;
-                showRed.style.display = 'block';
-            }
-        });
-            
-            
-        
-        
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
